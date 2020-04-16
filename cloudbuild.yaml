@@ -1,5 +1,5 @@
 steps:
-  - name: "gcr.io/cloud-builders/mvn"
-    args: ["appengine:deploy", "-X"]
-  - name: "gcr.io/cloud-builders/gcloud"
-    args: ["app", "deploy"]
+- name: 'gcr.io/cloud-builders/mvn'
+  args: ['package']
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['app', 'deploy', './target/appengine-staging/app.yaml']
