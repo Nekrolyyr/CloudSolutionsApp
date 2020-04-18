@@ -1,5 +1,3 @@
 steps:
-- name: 'gcr.io/cloud-builders/mvn'
-  args: ['package']
-- name: 'gcr.io/cloud-builders/gcloud'
-  args: ['app', 'deploy', '/target/self-information-0.0.1-SNAPSHOT/WEB-INF/appengine-web.xml']
+    - name: 'gcr.io/cloud-builders/docker'
+      args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/docker-compose.yml', '.' ]
